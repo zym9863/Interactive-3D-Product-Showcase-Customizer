@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive 3D Product Showcase & Customizer</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="top-bar">
+    <div class="logo"><i class="fas fa-cube"></i> 3D Showcase</div>
+    <nav class="nav">
+      <a href="#" id="help-btn" title="Help"><i class="fas fa-question-circle"></i> 帮助</a>
+      <a href="#" id="theme-btn" title="Toggle Theme"><i class="fas fa-moon"></i> 主题</a>
+    </nav>
+  </div>
+  <div id="sidebar"><!-- 未来自定义面板 --></div>
+  <div id="canvas-container"></div>
+  <!-- 帮助模态框 -->
+  <div id="help-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="help-close">&times;</span>
+      <h2>帮助</h2>
+      <p>欢迎使用 3D 产品展示与定制器！<br> 
+      - 拖拽旋转、缩放 3D 产品模型<br>
+      - 右侧面板可自定义产品参数（如颜色、尺寸等）<br>
+      - 如需更多帮助，请联系开发者</p>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

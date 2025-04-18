@@ -1,0 +1,162 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #232946;
+}
+
+#top-bar {
+  width: 100vw;
+  height: 56px;
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 2px 8px rgba(44,62,80,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+#top-bar .logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#top-bar .logo i {
+  margin-right: 10px;
+  color: #232946;
+}
+
+#top-bar .nav {
+  display: flex;
+  gap: 18px;
+}
+
+#top-bar .nav a {
+  color: #232946;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+#top-bar .nav a:hover {
+  color: #0077ff;
+}
+
+#canvas-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 56px;
+  /* leave space for top-bar */
+}
+
+/* 未来自定义面板样式预留 */
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 56px;
+  width: 260px;
+  height: calc(100vh - 56px);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 2px 0 12px rgba(44,62,80,0.08);
+  border-top-right-radius: 16px;
+  z-index: 9;
+  padding: 24px 16px;
+  display: none; /* 默认隐藏 */
+}
+
+/* 3D展示区视觉优化 */
+#canvas-container canvas {
+  box-shadow: 0 4px 32px rgba(44,62,80,0.18);
+  border-radius: 18px;
+  background: #fff;
+}
+
+/* 帮助模态框样式 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(44,62,80,0.18);
+  justify-content: center;
+  align-items: center;
+}
+.modal.show {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  padding: 32px 28px 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 48px rgba(44,62,80,0.15);
+  min-width: 320px;
+  max-width: 90vw;
+  color: #232946;
+  position: relative;
+}
+.modal-content h2 {
+  margin-top: 0;
+}
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.8rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close:hover {
+  color: #0077ff;
+}
+
+/* 深色主题 */
+body.dark-theme {
+  background: linear-gradient(135deg, #232946 0%, #1a1a2e 100%);
+  color: #eee;
+}
+body.dark-theme #top-bar {
+  background: rgba(32,34,46,0.92);
+  color: #eee;
+}
+body.dark-theme #top-bar .logo i,
+body.dark-theme #top-bar .nav a {
+  color: #eee;
+}
+body.dark-theme #top-bar .nav a:hover {
+  color: #ffb400;
+}
+body.dark-theme #sidebar {
+  background: rgba(32,34,46,0.98);
+  color: #eee;
+}
+body.dark-theme #canvas-container canvas {
+  background: #232946;
+}
+body.dark-theme .modal-content {
+  background: #232946;
+  color: #eee;
+}
+body.dark-theme .close {
+  color: #bbb;
+}
+body.dark-theme .close:hover {
+  color: #ffb400;
+}
